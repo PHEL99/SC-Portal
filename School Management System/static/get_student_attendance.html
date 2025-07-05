@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Student Attendance - SC Portal</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <span id="portal-title">SC Portal</span>
+    </header>
+    <main>
+        <h2>Get Student Attendance</h2>
+        <form id="getAttendanceForm" class="entity-form">
+            <div class="form-group">
+                <label for="attendance_class">Select Class</label>
+                <select id="attendance_class" name="attendance_class" required>
+                    <option value="">-- Select Class --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="attendance_date">Date</label>
+                <input type="date" id="attendance_date" name="attendance_date" required>
+            </div>
+            <button type="submit">Get Attendance</button>
+            <div id="attendance-message" class="form-message"></div>
+        </form>
+        <div id="attendance-records-container" style="margin-top:2.5rem;"></div>
+    </main>
+    <script src="/static/get_student_attendance.js"></script>
+    <script src="/static/chatbot.js"></script>
+</body>
+</html> 

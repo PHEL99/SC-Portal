@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student - SC Portal</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <span id="portal-title">SC Portal</span>
+    </header>
+    <main>
+        <h2>Search Student</h2>
+        <form id="searchStudentForm" class="entity-form">
+            <div class="form-group">
+                <label for="search_query">Student ID or Name</label>
+                <input type="text" id="search_query" name="search_query" required>
+            </div>
+            <button type="submit">Search</button>
+            <div id="search-student-message" class="form-message"></div>
+        </form>
+        <div id="search-student-result" style="max-width:500px;margin:2rem auto 0 auto;"></div>
+    </main>
+    <script src="/static/chatbot.js"></script>
+    <script src="/static/search_student.js"></script>
+</body>
+</html> 
