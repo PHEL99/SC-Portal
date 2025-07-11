@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Common Header Styles for All Pages */
+.dashboard-header {
+    background: #fff;
+    padding: 1rem 2rem;
+    margin: 1rem 7rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 1;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content h1 {
+    color: #583b9c;
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.back-btn {
+    background: #583b9c;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    background: #472f7d;
+}
+
+.logout-btn {
+    background: #dc3545;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.logout-btn:hover {
+    background: #c82333;
+}
+
+.back-btn i, .logout-btn i {
+    font-size: 1rem;
+}
+
+/* Responsive Header Styles */
+@media (max-width: 1200px) {
+    .dashboard-header {
+        margin: 1rem 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        margin: 1rem 2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .back-btn, .logout-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header {
+        margin: 0.5rem 1rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .header-buttons {
+        gap: 0.5rem;
+    }
+
+    .back-btn, .logout-btn {
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* Hide button text on very small screens, show only icons */
+    .back-btn span, .logout-btn span {
+        display: none;
+    }
+
+    .back-btn i, .logout-btn i {
+        margin: 0;
+    }
+}
+
+/* Login Page Styles */
+.login-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    background: rgba(255,255,255,0.95);
+    padding: 2rem 3rem 2.5rem 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    min-width: 400px;
+    max-width: 500px;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+.login-box h2 {
+    font-size: 2.3rem;
+    margin-bottom: 0.5rem;
+    color: #583b9c;
+    width: 100%;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 0.8rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: left;
+    width: 90%;
+    align-self: flex-start;
+}
+.form-group input {
+    width: 90%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.2s;
+    text-align: left;
+    padding-left: 1rem;
+}
+.form-group input:focus {
+    border-color: #2575fc;
+    outline: none;
+}
+.login-btn {
+    display: block;
+    margin: 1.5rem auto 0 auto;
+    width: 96%;
+    padding: 0.8rem;
+    background:#583b9c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+}
+.login-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.btn-loader {
+    display: none;
+}
+.login-btn.loading .btn-text {
+    display: none;
+}
+.login-btn.loading .btn-loader {
+    display: inline;
+}
+.login-btn:hover {
+    background: #472f7d;
+    transform: translateY(-2px);
+}
+@media (max-width: 500px) {
+    .login-box {
+        padding: 1.5rem 0.5rem;
+        min-width: 90vw;
+    }
+}
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+    width: 90%;
+}
+
+.message.error {
+    background-color: #ffe6e6;
+    color: #d63031;
+    border: 1px solid #ff7675;
+    display: block;
+}
+
+.message.success {
+    background-color: #e6ffe6;
+    color: #27ae60;
+    border: 1px solid #2ecc71;
+    display: block;
+} 

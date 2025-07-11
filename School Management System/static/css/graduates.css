@@ -1,0 +1,239 @@
+/* Main Content Styles */
+.graduates-main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Table Container */
+.table-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 1rem;
+}
+
+/* Search Section */
+.search-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid #e1e1e1;
+    background: #f8f9fa;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 1rem 2.8rem;
+    border: 2px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.search-box input:focus {
+    border-color: #583b9c;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(88, 59, 156, 0.1);
+}
+
+/* Table Styles */
+.table-scroll {
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 0 1px;
+}
+
+.table-scroll::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+.graduates-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.graduates-table thead {
+    position: sticky;
+    top: 0;
+    background: #f8f9fa;
+    z-index: 1;
+}
+
+.graduates-table th {
+    background: #f8f9fa;
+    color: #583b9c;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    border-bottom: 2px solid #e1e1e1;
+    white-space: nowrap;
+}
+
+.graduates-table td {
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid #e1e1e1;
+    color: #333;
+}
+
+.graduates-table tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.graduates-heading {
+    color: #583b9c;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 2rem 1rem;
+    text-align: center;
+}
+
+.graduates-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-right: 25px;
+}
+
+.graduates-table th.sortable:hover {
+    background: #f0f0f0;
+}
+
+.graduates-table th.sortable::after {
+    content: '↕';
+    position: absolute;
+    right: 8px;
+    color: #999;
+}
+
+.graduates-table th.sortable.asc::after {
+    content: '↑';
+    color: #583b9c;
+}
+
+.graduates-table th.sortable.desc::after {
+    content: '↓';
+    color: #583b9c;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .graduates-main {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .graduates-main {
+        padding: 1rem;
+    }
+
+    .table-container {
+        margin: 0;
+        border-radius: 8px;
+    }
+
+    .search-section {
+        padding: 1rem;
+    }
+
+    .graduates-table th,
+    .graduates-table td {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .graduates-main {
+        padding: 0.5rem;
+    }
+
+    .search-section {
+        padding: 0.8rem;
+    }
+
+    .search-box input {
+        padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+        font-size: 0.9rem;
+    }
+
+    .graduates-table th,
+    .graduates-table td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Card View for Mobile */
+@media (max-width: 600px) {
+    .graduates-table {
+        min-width: unset;
+    }
+
+    .graduates-table thead {
+        display: none;
+    }
+
+    .graduates-table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid #e1e1e1;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .graduates-table td {
+        display: block;
+        padding: 0.5rem 0;
+        border: none;
+        text-align: left;
+        position: relative;
+    }
+
+    .graduates-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #583b9c;
+        display: block;
+        margin-bottom: 0.3rem;
+    }
+
+    .graduates-table td:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+} 

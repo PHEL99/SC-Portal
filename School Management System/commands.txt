@@ -1,0 +1,61 @@
+# School Management System - User Commands
+
+
+1. List all students
+   - "Show me all students"
+   - "List students"
+   - "Who are the students?"
+
+2. List all teachers
+   - "Show me all teachers"
+   - "List teachers"
+   - "Who are the teachers?"
+
+3. List all classes
+   - "Show me all classes"
+   - "List classes"
+   - "What classes are there?"
+
+4. List attendance records
+   - "Show attendance records"
+   - "How many attendance records are there?"
+   - "List attendance"
+
+5. Add a new student
+   - "Add a student with ID  {student id}, name {student name}, class {class name}, contact {contact no}, grade {grade}"
+
+6. Add a new teacher
+   - "Add a teacher with  {teacher id}, name  {teacher name}, subject {subject}, classes {all the classes teacher teach} contact 67890"
+
+7. Add a new class
+   - "Add class {class name}"
+
+8. Delete a student
+   - "Delete student {studen id}"
+
+9. Delete a teacher
+   - "Delete teacher {teacher id}"
+
+10. Search for a student by ID or name
+    - "Find student {student id}"
+    - "Search for {student name}"
+
+11. Search for a teacher by ID or name
+    - "Find teacher {teacher id}"
+    - "Search for {teacher name}"
+
+12. List students in a specific class
+    - "Show students in class {class name}"
+    - "List students in class {class name}"
+
+13. Update student information
+    - "Update student S001: name=New Name, class=B, contact=55555, grade=6"
+
+14. Update teacher information
+    - "Update teacher {teacher_id}: name={}, subject={Science}, classes={}, contact={}"
+
+15. Take attendance for a class
+    - "Take attendance for class A, absent students: {student_id}, {student_id}"
+
+16. Get attendance for a class on a specific date
+    - "Show attendance for class A on {date}"

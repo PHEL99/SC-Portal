@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SC Portal - Login</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>SC Portal</h1>
+        </div>
+    </header>
+    <div class="login-container">
+        <form class="login-box" method="post" action="/login">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required autocomplete="current-password">
+            </div>
+            <button class="login-btn" type="submit">
+                <span class="btn-text">Login</span>
+                <span class="btn-loader" style="display: none;">Loading...</span>
+            </button>
+        </form>
+    </div>
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/login.js"></script>
+</body>
+</html> 

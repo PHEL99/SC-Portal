@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination - SC Portal</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/examination.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>SC Portal</h1>
+            <div class="header-buttons">
+                <button onclick="location.href='/static/html/dashboard.html'" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Dashboard</span>
+                </button>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="examination-container">
+        <div class="page-header">
+            <h1>Examination Management</h1>
+        </div>
+
+        <!-- Promote Button -->
+        <button class="promote-btn" onclick="openPromoteModal()">
+            <i class="fas fa-graduation-cap"></i>
+            Promote Students
+        </button>
+
+        <!-- Toggle Buttons -->
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" onclick="toggleView('add-marks')">Add Marks</button>
+            <button class="toggle-btn" onclick="toggleView('view-results')">View Results</button>
+        </div>
+
+        <!-- Add Marks Section -->
+        <section id="add-marks" class="exam-section active">
+            <div class="marks-form">
+                <div class="form-group">
+                    <label for="student-id">Student ID:</label>
+                    <input type="text" id="student-id" placeholder="Enter Student ID">
+                </div>
+                <div class="form-group">
+                    <label for="class-select">Class:</label>
+                    <select id="class-select">
+                        <option value="">Select Class</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exam-type">Exam Type:</label>
+                    <select id="exam-type">
+                        <option value="">Select Exam Type</option>
+                        <option value="MID">Mid Term</option>
+                        <option value="FINAL">Final Term</option>
+                    </select>
+                </div>
+
+                <div class="subjects-container">
+                    <!-- Subject entries will be added here dynamically -->
+                </div>
+
+                <button class="add-subject-btn" onclick="addSubjectField()">
+                    <i class="fas fa-plus"></i> Add Subject
+                </button>
+
+                <button class="submit-marks-btn" onclick="submitMarks()">Submit Marks</button>
+            </div>
+        </section>
+
+        <!-- View Results Section -->
+        <section id="view-results" class="exam-section">
+            <div class="results-form">
+                <div class="form-group">
+                    <label for="search-student-id">Student ID:</label>
+                    <input type="text" id="search-student-id" placeholder="Enter Student ID">
+                </div>
+                <div class="form-group">
+                    <label for="search-class">Class:</label>
+                    <select id="search-class">
+                        <option value="">Select Class</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="search-exam-type">Exam Type:</label>
+                    <select id="search-exam-type">
+                        <option value="">Select Exam Type</option>
+                        <option value="MID">Mid Term</option>
+                        <option value="FINAL">Final Term</option>
+                    </select>
+                </div>
+                <button class="view-results-btn" onclick="viewResults()">View Results</button>
+            </div>
+
+            <div class="results-display">
+                <!-- Results will be displayed here -->
+            </div>
+        </section>
+
+        <!-- Promote Modal -->
+        <div id="promote-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Promote Students</h2>
+                    <button class="close-btn" onclick="closePromoteModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p class="promote-description">
+                        This action will promote all students who have achieved 50% or above marks to the next class. Students in grade 8 who meet the criteria will be moved to the graduates list. This action cannot be undone.
+                    </p>
+                    <div class="confirm-checkbox">
+                        <input type="checkbox" id="confirm-promote" onchange="togglePromoteButton()">
+                        <label for="confirm-promote">I understand and wish to proceed with the promotion</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="cancel-btn" onclick="closePromoteModal()">Cancel</button>
+                    <button id="proceed-promote" class="proceed-btn" onclick="promoteStudents()" disabled>Proceed with Promotion</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/examination.js"></script>
+</body>
+</html> 

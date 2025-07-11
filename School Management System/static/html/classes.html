@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes - SC Portal</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/classes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>SC Portal</h1>
+            <div class="header-buttons">
+                <button onclick="location.href='/static/html/dashboard.html'" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Dashboard</span>
+                </button>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="classes-main">
+        <div class="page-header">
+            <h1>Classes Management</h1>
+        </div>
+
+        <div class="toggle-section">
+            <button class="toggle-btn active" data-section="overview">
+                <i class="fas fa-list"></i>
+                Classes Overview
+            </button>
+            <button class="toggle-btn" data-section="details">
+                <i class="fas fa-search"></i>
+                Class Details
+            </button>
+        </div>
+
+        <!-- Classes Overview Section -->
+        <section id="overviewSection" class="content-section active">
+            <div class="overview-controls">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="classSearch" placeholder="Search classes...">
+                </div>
+                <button id="addClassBtn" class="add-class-btn" title="Add New Class">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="classes-grid">
+                <!-- Classes will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Class Details Section -->
+        <section id="detailsSection" class="content-section">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="classSelect">Select Class</label>
+                    <select id="classSelect">
+                        <option value="">Choose a class</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="viewType">View</label>
+                    <select id="viewType">
+                        <option value="students">Students</option>
+                        <option value="teachers">Teachers</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th class="subject-column">Subject</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultsTableBody">
+                        <!-- Results will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Add Class Modal -->
+        <div id="addClassModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Class</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="newClassName">Class Name</label>
+                        <input type="text" id="newClassName" placeholder="Enter class name (e.g., 8-A)">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="saveClassBtn" class="primary-btn">Save</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/classes.js"></script>
+</body>
+</html> 

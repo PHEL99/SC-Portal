@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers - SC Portal</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/teachers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>SC Portal</h1>
+            <div class="header-buttons">
+                <button onclick="location.href='/static/html/dashboard.html'" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Dashboard</span>
+                </button>
+                <button id="logoutBtn" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="teachers-main">
+        <div class="page-header">
+            <h1>Teachers Management</h1>
+            <button class="add-teacher-btn" onclick="openModal()">
+                <i class="fas fa-plus"></i>
+                Add New Teacher
+            </button>
+        </div>
+
+        <div class="table-container">
+            <div class="search-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by ID or name...">
+                </div>
+            </div>
+            <div class="table-scroll">
+                <table class="teachers-table">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="teacher_id">Teacher ID <i class="fas fa-sort"></i></th>
+                            <th>Name</th>
+                            <th class="sortable" data-sort="subject">Subject <i class="fas fa-sort"></i></th>
+                            <th>Contact</th>
+                            <th>Classes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="teachersTableBody">
+                        <!-- Table rows will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Teacher Modal -->
+    <div id="teacherModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Teacher</h2>
+                <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="teacherForm">
+                <div class="form-group">
+                    <label for="teacherId">Teacher ID</label>
+                    <input type="text" id="teacherId" name="teacher_id" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacherName">Name</label>
+                    <input type="text" id="teacherName" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label>Classes</label>
+                    <div class="classes-checkbox-container" id="classesContainer">
+                        <!-- Checkboxes will be added here dynamically -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact</label>
+                    <input type="text" id="contact" name="contact" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="submit-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/js/auth.js"></script>
+    <script src="/static/js/teachers.js"></script>
+</body>
+</html> 

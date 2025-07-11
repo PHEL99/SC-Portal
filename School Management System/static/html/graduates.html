@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduates | School Management System</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/graduates.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <h1>SC Portal</h1>
+            <div class="header-buttons">
+                <button class="back-btn" onclick="window.location.href='/dashboard'">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Dashboard</span>
+                </button>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="graduates-main">
+        <h2 class="graduates-heading">Graduates</h2>
+        <div class="table-container">
+            <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search graduates by name or ID...">
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-scroll">
+                <table class="graduates-table">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="student_id">Student ID</th>
+                            <th>Name</th>
+                            <th class="sortable" data-sort="overall_marks">Grade</th>
+                            <th>Contact</th>
+                            <th class="sortable" data-sort="graduation_year">Graduation Year</th>
+                        </tr>
+                    </thead>
+                    <tbody id="graduatesTableBody">
+                        <!-- Graduates will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/graduates.js"></script>
+</body>
+</html> 

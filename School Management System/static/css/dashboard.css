@@ -1,0 +1,246 @@
+/* Dashboard Layout */
+.dashboard-body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #f5f6fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Override the body padding for dashboard */
+body.dashboard-body {
+    padding: 0;
+}
+
+.dashboard-main {
+    max-width: 1260px; /* Reduced from 1400px */
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.dashboard-title {
+    font-size: 2.5rem; /* Reduced from 2.2rem */
+    color: #583b9c;
+    margin: 1rem 0 2rem 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Statistics Section */
+.statistics-section {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 5rem;
+    padding: 1rem;
+}
+
+.stat-card {
+    border-radius: 12px;
+    padding: 2.5rem 3.8rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    width: calc(20% - 1.6rem);
+    min-width: 200px;
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.stat-card i {
+    font-size: 2.7rem;
+    padding: 1.35rem;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Statistics card variations */
+.stat-card.students {
+    background: linear-gradient(135deg, #37377c 0%, #1E3B8C 100%);
+}
+
+.stat-card.teachers {
+    background: linear-gradient(135deg, #00CED1 0%, #008B8B 100%);
+}
+
+.stat-card.classes {
+    background: linear-gradient(135deg, #FFD700 0%, #DAA520 100%);
+}
+
+.stat-info h3 {
+    margin: 0;
+    font-size: 1.17rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.stat-number {
+    margin: 0.45rem 0 0 0;
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Administration Section */
+.section-title {
+    color: #583b9c;
+    margin-bottom: 1.8rem; /* Reduced from 2rem */
+    margin-left: 1.26rem; /* Reduced from 1.4rem */
+    font-size: 2.5rem; /* Reduced from 2.2rem */
+    font-weight: 700;
+    text-align: center;
+}
+
+.admin-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.8rem; /* Reduced from 2rem */
+    flex-wrap: wrap;
+    padding: 0.9rem; /* Reduced from 1rem */
+}
+
+.admin-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.25rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+    width: calc(20% - 1.44rem);
+    min-width: 180px;
+    max-width: 270px;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Card color variations */
+.admin-card:nth-child(1) {
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+}
+
+.admin-card:nth-child(2) {
+    background: linear-gradient(135deg, #FF6B6B 0%, #FF0000 100%);
+}
+
+.admin-card:nth-child(3) {
+    background: linear-gradient(135deg, #50C878 0%, #228B22 100%);
+}
+
+.admin-card:nth-child(4) {
+    background: linear-gradient(135deg, #FFB347 0%, #FF8C00 100%);
+}
+
+.admin-card:nth-child(5) {
+    background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);
+}
+
+.admin-card:nth-child(6) {
+    background: linear-gradient(135deg, #00CED1 0%, #008B8B 100%);
+}
+
+.admin-card i {
+    font-size: 2.7rem;
+    margin-bottom: 1.35rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.admin-card h3 {
+    margin: 0 0 0.9rem 0;
+    color: white;
+    font-size: 1.26rem;
+}
+
+.admin-card p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .statistics-section,
+    .admin-cards {
+        justify-content: center;
+        gap: 1.35rem; /* Reduced from 1.5rem */
+    }
+    
+    .stat-card,
+    .admin-card {
+        width: calc(33.33% - 0.9rem); /* Reduced from 1rem */
+        min-width: 225px; /* Reduced from 250px */
+    }
+}
+
+@media (max-width: 992px) {
+    .stat-card,
+    .admin-card {
+        width: calc(50% - 0.9rem); /* Reduced from 1rem */
+    }
+}
+
+@media (max-width: 768px) {
+    .statistics-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.45rem; /* Reduced from 0.5rem */
+    }
+
+    .admin-cards {
+        justify-content: center;
+        padding: 0.45rem; /* Reduced from 0.5rem */
+    }
+
+    .stat-card,
+    .admin-card {
+        width: calc(100% - 1.8rem); /* Reduced from 2rem */
+        max-width: 270px; /* Reduced from 300px */
+        min-width: auto;
+        margin: 0 0.9rem; /* Reduced from 1rem */
+    }
+
+    .stat-card {
+        padding: 1.8rem; /* Reduced from 2rem */
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-title,
+    .section-title {
+        font-size: 1.62rem; /* Reduced from 1.8rem */
+    }
+
+    .stat-card,
+    .admin-card {
+        width: calc(100% - 0.9rem); /* Reduced from 1rem */
+        margin: 0 0.45rem; /* Reduced from 0.5rem */
+        padding: 1.35rem; /* Reduced from 1.5rem */
+    }
+
+    .stat-card i {
+        font-size: 2.25rem; /* Reduced from 2.5rem */
+        padding: 1.08rem; /* Reduced from 1.2rem */
+    }
+
+    .stat-info h3 {
+        font-size: 1rem; /* Reduced from 1.1rem */
+    }
+
+    .stat-number {
+        font-size: 1.8rem; /* Reduced from 2rem */
+    }
+} 
